@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+<<<<<<< Updated upstream
+=======
+import { Cocktail } from './shared/interfaces/cocktail.interface';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-root',
