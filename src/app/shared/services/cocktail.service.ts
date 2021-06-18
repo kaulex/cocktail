@@ -16,23 +16,23 @@ export class CocktailService {
       ingredients: [
         {
           name: 'rhum blanc',
-          quantity: '2cl',
+          quantity: 2,
         },
         {
           name: 'Jus de citron vert',
-          quantity: '1cl',
+          quantity: 1,
         },
         {
           name: 'Perrier',
-          quantity: '20cl',
+          quantity: 20,
         },
         {
           name: 'Sucre de canne',
-          quantity: '5g',
+          quantity: 5,
         },
         {
           name: 'Menthe fraîche',
-          quantity: '6 feuilles',
+          quantity: 6,
         },
       ],
     },
@@ -44,27 +44,27 @@ export class CocktailService {
       ingredients: [
         {
           name: 'rhum blanc',
-          quantity: '2cl',
+          quantity: 2,
         },
         {
           name: 'rhum brun',
-          quantity: '1cl',
+          quantity: 1,
         },
         {
           name: 'triple sec',
-          quantity: '1cl',
+          quantity: 1,
         },
         {
           name: "sirop d'orgeat",
-          quantity: '5g',
+          quantity: 5,
         },
         {
           name: 'Citron vert',
-          quantity: '6 gouttes',
+          quantity: 6,
         },
         {
           name: 'Sirop de sucre',
-          quantity: '1cl',
+          quantity: 1,
         },
       ],
     },
@@ -77,19 +77,19 @@ export class CocktailService {
       ingredients: [
         {
           name: 'Vodka',
-          quantity: '2cl',
+          quantity: 2,
         },
         {
           name: 'Jus de citron vert',
-          quantity: '1cl',
+          quantity: 1,
         },
         {
           name: 'Gingembre',
-          quantity: '3g',
+          quantity: 3,
         },
         {
           name: 'Soda',
-          quantity: '20cl',
+          quantity: 20,
         },
       ],
     },
@@ -103,6 +103,18 @@ export class CocktailService {
   public addCocktail(cocktail: Cocktail) : void {
     const value = this.cocktails$.value;
     this.cocktails$.next([...value, cocktail])
+  }
+
+  public editCocktail(editedCocktail: Cocktail): void {
+    const value = this.cocktails$.value;
+
+    this.cocktails$.next(value.map((cocktail: Cocktail) => {
+      if (cocktail.name === editedCocktail.name) {
+        return editedCocktail;
+      } else {
+        return cocktail
+      }
+    }))
   }
 
   constructor() {}
