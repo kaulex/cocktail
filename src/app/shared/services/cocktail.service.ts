@@ -100,5 +100,10 @@ export class CocktailService {
     return cocktails[index];
   }
 
+  public addCocktail(cocktail: Cocktail) : void {
+    const value = this.cocktails$.value;
+    this.cocktails$.next([...value, cocktail])
+  }
+
   constructor() {}
 }
