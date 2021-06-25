@@ -1,7 +1,7 @@
 <div class="container d-flex flex-row ">
 
     <app-cocktail-list 
-        [cocktails]="cocktails" 
+        [cocktails]="cocktails$ | async" 
         class="flex-50 pr-10">
     </app-cocktail-list>
 
