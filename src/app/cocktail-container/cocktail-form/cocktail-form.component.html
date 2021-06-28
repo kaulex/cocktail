@@ -12,7 +12,9 @@
     <input formControlName="description" type="text" />
   </div>
   <hr />
-  <button type="button" class="btn btn-primary" (click)="addIngredient()">Ajouter un ingrédient</button>
+  <button (click)="addIngredient()" class="btn btn-primary" type="button">
+    Ajouter ingrédient
+  </button>
   <hr />
   <div formArrayName="ingredients">
     <div
@@ -29,12 +31,11 @@
       </div>
     </div>
   </div>
-
   <div class="actions">
     <button [disabled]="cocktailForm.invalid" class="btn btn-primary">
       Valider
     </button>
-    <button type="button" routerLink=".." class="btn btn-secondary">
+    <button type="button" routerLink="../" class="btn btn-secondary">
       Annuler
     </button>
   </div>
